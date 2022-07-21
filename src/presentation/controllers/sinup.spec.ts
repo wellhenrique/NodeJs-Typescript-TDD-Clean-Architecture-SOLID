@@ -3,13 +3,13 @@ import { MissingParamError } from "../erros/missing-param-error";
 import { InvalidParamError } from "../erros/invalid-param-error";
 
 const makeSut = (): SignupController => {
-  class EmailValidator {
+  class EmailValidatorStub {
     isValid(email: String): boolean {
       return true;
     }
   }
 
-  const emailValidator = new EmailValidator();
+  const emailValidator = new EmailValidatorStub();
   return new SignupController();
 };
 
